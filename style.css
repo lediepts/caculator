@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #111;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  width: 50vw;
+  max-width: 320px;
+  height: 50vw;
+  max-height: 320px;
+  background: #109dff;
+  border-radius: 50%;
+  filter: blur(1px);
+  box-shadow: 0 4px 200px #109dff, 0 4px 100px #109dff;
+  z-index: -1;
+}
+.container .calculator {
+  border: 1px solid #fff;
+  border-radius: 2%;
+  padding: 2%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.65),
+    rgba(255, 255, 255, 0.3)
+  );
+}
+.container .calculator .result {
+  padding: 5% 0;
+}
+.container .calculator .result p {
+  text-align: right;
+}
+.container .calculator .result .formula {
+  color: #818181;
+}
+.container .calculator .result .rs {
+  padding: 1% 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+}
+.item span {
+  background: linear-gradient(135deg, #fff9, #fff2);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 2px #109dff, -1px -1px 10px #109dff66;
+  user-select: none;
+}
+.item span:hover {
+  transition: all 200ms;
+  cursor: pointer;
+  box-shadow: 0 0 10px #109dff66, 0 0 30px #109dff66;
+}
+.item span:active {
+  box-shadow: 0 0 10px #109dff;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 8px;
+}
+.item-12 {
+  background: transparent;
+  grid-column: 4;
+  grid-row: 3 / span 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 5px;
+  gap: 15px;
+}
+.item-12 span {
+  flex: 1;
+}
+.item-16 {
+  grid-row: 5;
+  grid-column: 1 / span 2;
+}
+.item-16 span {
+  width: 100%;
+}
